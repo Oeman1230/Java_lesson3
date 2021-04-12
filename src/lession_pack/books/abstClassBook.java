@@ -53,6 +53,6 @@ public abstract class abstClassBook {
                 ", bookName='" + bookName + '\'' +
                 ", bookYear=" + bookYear +
                 ", bookPublisher='" + bookPublisher + '\'' +
-                '}';
+                System.lineSeparator();
     }
 }

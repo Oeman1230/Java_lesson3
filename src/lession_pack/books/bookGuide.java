@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class bookGuide extends abstClassBook {
-    bookGuide()
+    public bookGuide()
     {
         TopicsCount = 0;
         ShchemesCount = 0;
@@ -20,10 +20,7 @@ public class bookGuide extends abstClassBook {
         return getBook() +
                 "guideMainTopic='" + guideMainTopic + '\'' +
                 ", TopicsCount=" + TopicsCount +
-                ", ShchemesCount=" + ShchemesCount +
-                ", Schemes=" + Schemes +
-                ", topics=" + topics +
-                '}';
+                ", ShchemesCount=" + ShchemesCount;
     }
 
     public void setGuideMainTopic(String guideMainTopic) {
@@ -123,8 +120,7 @@ public class bookGuide extends abstClassBook {
             return "schemeName='" + schemeName + '\'' +
                     ", schemeImage='" + schemeImage + '\'' +
                     ", schemeDescription='" + schemeDescription + '\'' +
-                    ", schemePage=" + schemePage +
-                    '}';
+                    ", schemePage=" + schemePage;
         }
     }
     //////////////////////////////////////////////////////////////////////////////////////////

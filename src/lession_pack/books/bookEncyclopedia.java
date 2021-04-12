@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class bookEncyclopedia extends bookGuide {
-    bookEncyclopedia()
+    public bookEncyclopedia()
     {
         imagesCount = 0;
     }
@@ -12,6 +12,7 @@ public class bookEncyclopedia extends bookGuide {
     private Integer encyPagesCount;
     private Integer imagesCount;
     List<encyImages>images = new ArrayList<>();
+
 
     public void setEncyName(String encyName) {
         this.encyName = encyName;
@@ -37,14 +38,16 @@ public class bookEncyclopedia extends bookGuide {
         return imagesCount;
     }
 
+
+
     public String getEncyclopedia() {
-        return getGuide() +
+        return getBook() +
                 "encyName='" + encyName + '\'' +
                 ", encyPagesCount=" + encyPagesCount +
-                ", imagesCount=" + imagesCount +
-                ", images=" + images +
-                '}';
+                ", imagesCount=" + imagesCount ;
+
     }
+
 
     public void addImage(Integer page, String abstImage)
     {
@@ -88,8 +91,7 @@ public class bookEncyclopedia extends bookGuide {
         public String getImage() {
             return
                     "imagePage=" + imagePage +
-                    ", abstrImage='" + abstrImage + '\'' +
-                    '}';
+                    ", abstrImage='" + abstrImage + '\'';
         }
     }
 
