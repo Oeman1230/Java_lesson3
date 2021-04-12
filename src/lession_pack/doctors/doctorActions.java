@@ -5,6 +5,6 @@ public interface doctorActions {
     void getPatient(String patientName);
     void listenSyndromes(String syndromes);
     String checkKnownIllnesses();
-    void teachNewIllness(String Illness);
-    void giveHealing(String IllnessName);
+    void teachNewIllness(String Illness, String syndromes);
+    boolean giveHealing(String IllnessName);
 }
