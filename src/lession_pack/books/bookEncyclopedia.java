@@ -37,6 +37,15 @@ public class bookEncyclopedia extends bookGuide {
         return imagesCount;
     }
 
+    public String getEncyclopedia() {
+        return getGuide() +
+                "encyName='" + encyName + '\'' +
+                ", encyPagesCount=" + encyPagesCount +
+                ", imagesCount=" + imagesCount +
+                ", images=" + images +
+                '}';
+    }
+
     public void addImage(Integer page, String abstImage)
     {
         encyImages temp = new encyImages();
