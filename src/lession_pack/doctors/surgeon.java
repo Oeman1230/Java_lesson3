@@ -9,7 +9,7 @@ public class surgeon implements doctorActions{
     protected String currentPatientName;
     protected String currentSyndrome;
     protected Integer currentSyndromeNumber;
-    List<Illnesses> KnownIllnesses = new ArrayList<>();
+    private List<Illnesses> KnownIllnesses = new ArrayList<>();
 
     public void setDoctorName(String doctorName) {
         this.doctorName = doctorName;

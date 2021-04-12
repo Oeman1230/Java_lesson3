@@ -2,6 +2,7 @@ package lession_pack;
 
 import lession_pack.books.bookGuide;
 import lession_pack.books.bookEncyclopedia;
+import lession_pack.doctors.neuroSurgeon;
 import lession_pack.doctors.surgeon;
 import lession_pack.phone.Model;
 
@@ -78,5 +79,9 @@ public class Main {
         doc1.teachNewIllness("hit", "pain in leg");
 
         doc1.doDoctorWork(phone1.getPhoneOwner(), "pain in leg");
+
+        neuroSurgeon doc2 = new neuroSurgeon();
+        doc2.teachNewIllness("insult", "headache", 50, true);
+
     }
 }
