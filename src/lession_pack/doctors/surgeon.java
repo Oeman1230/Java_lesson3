@@ -8,6 +8,7 @@ public class surgeon implements doctorActions{
     protected Integer yearsInWork;
     protected String currentPatientName;
     protected String currentSyndrome;
+    protected Integer currentSyndromeNumber;
     List<Illnesses> KnownIllnesses = new ArrayList<>();
 
     public void setDoctorName(String doctorName) {
@@ -24,15 +25,11 @@ public class surgeon implements doctorActions{
 
     @Override
     public boolean giveHealing(String IllnessName) {
-        Integer i = 0;
-        while (KnownIllnesses.iterator().hasNext() || KnownIllnesses.get(i).getCanHeal() != false)
+        System.out.println(doctorName + " thinking about medicine");
+        if(KnownIllnesses.get(currentSyndromeNumber).getCanHeal() != false)
         {
-            if(KnownIllnesses.iterator().next().equals(IllnessName))
-            {
-                System.out.println(currentPatientName + " is cured by" + KnownIllnesses.get(i).getIllnessMedicine());
+                System.out.println(currentPatientName + " is cured by " + KnownIllnesses.get(currentSyndromeNumber).getIllnessMedicine());
                 return true;
-            }
-            i++;
         }
         System.out.println(doctorName+ ": I cant heal " + currentSyndrome);
         return false;
@@ -51,11 +48,16 @@ public class surgeon implements doctorActions{
 
     @Override
     public String checkKnownIllnesses() {
+        System.out.println(doctorName + " thinking about:" + currentSyndrome);
         Integer i = 0;
         while(KnownIllnesses.iterator().hasNext())
         {
             if(KnownIllnesses.iterator().next().getSyndromes().equals(currentSyndrome))
+            {
+                System.out.println("idea");
+                currentSyndromeNumber = i;
                 return KnownIllnesses.get(i).getIllnessName();
+            }
             i++;
         }
         return "Unknown illness";
@@ -77,7 +79,10 @@ public class surgeon implements doctorActions{
     public boolean doDoctorWork(String patientName, String syndromes) {
         getPatient(patientName);
         listenSyndromes(syndromes);
-         return giveHealing(checkKnownIllnesses());
+        StringBuffer buf = new StringBuffer();
+        buf.append(checkKnownIllnesses());
+        System.out.println(buf.substring(0));
+         return giveHealing(buf.substring(0));
 
     }
     protected class Illnesses

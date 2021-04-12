@@ -2,6 +2,7 @@ package lession_pack;
 
 import lession_pack.books.bookGuide;
 import lession_pack.books.bookEncyclopedia;
+import lession_pack.doctors.surgeon;
 import lession_pack.phone.Model;
 
 public class Main {
@@ -70,5 +71,12 @@ public class Main {
         phone1.getSMSFrom(phone2.getPhoneOwner(), "Здорова. Как дела?" );
         phone1.phoneCall(phone2.getPhoneOwner());
         ////////////////////////////////////////////////////////////////////
+        System.out.println(System.lineSeparator());
+        surgeon doc1 = new surgeon();
+        doc1.setDoctorName("Vladimir");
+        doc1.setYearsInWork(10);
+        doc1.teachNewIllness("hit", "pain in leg");
+
+        doc1.doDoctorWork(phone1.getPhoneOwner(), "pain in leg");
     }
 }
