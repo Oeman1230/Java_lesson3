@@ -71,7 +71,7 @@ public class surgeon implements doctorActions{
 
     @Override
     public void getPatient(String patientName) {
-        System.out.println(patientName + " Пришел");
+        System.out.println(patientName + " visit " + doctorName);
         currentPatientName = patientName;
     }
 
