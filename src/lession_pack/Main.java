@@ -7,5 +7,6 @@ public class Main {
     System.out.println("test");
     System.out.println("merge");
     System.out.println("merge failed");
+    System.out.println("merge success?");
     }
 }
