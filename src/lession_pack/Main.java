@@ -2,11 +2,13 @@ package lession_pack;
 
 import lession_pack.books.bookGuide;
 import lession_pack.books.bookEncyclopedia;
+import lession_pack.phone.Model;
 
 public class Main {
 
     public static void main(String[] args) {
         bookGuide testGuide = new bookGuide();
+        System.out.println(System.lineSeparator());
         testGuide.setBookCode("1");
         testGuide.setBookName("test guide book");
         testGuide.setBookAuthor("Oeman1230");
@@ -36,5 +38,37 @@ public class Main {
                 "pict.#1 Java in world");
         System.out.println(testEncy.getTopic(1));
         System.out.println(testEncy.getSchemeByPage(1));
+        ////////////////////////////////////////////////////////////////////
+        Model phone1 = new Model();
+        phone1.setPhoneOwner("Kolya");
+        phone1.setPhoneNumber(980);
+        phone1.setPhoneCameraCount(1);
+        phone1.setPhoneCameraMPix(12);
+        phone1.setPhoneMemorySize(120);
+        phone1.setModelNumber(123);
+        phone1.setOSname("Android");
+        phone1.setOSversion(101);
+        phone1.setInternetConnection();
+        System.out.println(System.lineSeparator() +phone1.getModelInfo());
+
+        ////////////////////////////////////////////////////////////////////
+        Model phone2 = new Model();
+        phone2.setPhoneOwner("Pasha");
+        phone2.setPhoneNumber(240);
+        phone2.setPhoneCameraCount(3);
+        phone2.setPhoneCameraMPix(24);
+        phone2.setPhoneMemorySize(240);
+        phone2.setModelNumber(234);
+        phone2.setOSname("Ios");
+        phone2.setOSversion(567);
+        phone2.setFiveGAccess();
+        System.out.println(System.lineSeparator() + phone2.getModelInfo());
+        ////////////////////////////////////////////////////////////////////
+        phone1.sendSMS(phone2.getPhoneOwner(), "Привет");
+        phone2.getSMSFrom(phone1.getPhoneOwner(), "Привет");
+        phone2.sendSMS(phone1.getPhoneOwner(), "Здорова. Как дела? ");
+        phone1.getSMSFrom(phone2.getPhoneOwner(), "Здорова. Как дела?" );
+        phone1.phoneCall(phone2.getPhoneOwner());
+        ////////////////////////////////////////////////////////////////////
     }
 }

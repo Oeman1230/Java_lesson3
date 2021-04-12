@@ -27,7 +27,10 @@ public abstract class SiemensMobile implements Mobile {
     public void setPhoneMemorySize(Integer phoneMemorySize) {
         this.phoneMemorySize = phoneMemorySize;
     }
-
+    public String getPhoneOwner()
+    {
+        return phoneOwner;
+    }
     public String getPhoneInfo() {
         return
                 "phoneOwner='" + phoneOwner + '\'' +
@@ -35,7 +38,7 @@ public abstract class SiemensMobile implements Mobile {
                 ", phoneCameraMPix=" + phoneCameraMPix +
                 ", phoneCameraCount=" + phoneCameraCount +
                 ", phoneMemorySize=" + phoneMemorySize +
-                '}';
+                " gigabytes" + System.lineSeparator();
     }
 
     @Override
@@ -63,7 +66,7 @@ public abstract class SiemensMobile implements Mobile {
     @Override
     public void getPhoneCall(String personFrom) {
         doPhoneRing();
-        System.out.println(personFrom + " is calling for you");
+        System.out.println(personFrom + " is calling for you," + phoneOwner);
     }
 
 }

@@ -1,6 +1,11 @@
 package lession_pack.phone;
 
 public class Model extends SiemensMobile {
+    public Model()
+    {
+        fiveGAvailable = false;
+        InternetConnection = false;
+    }
     private Integer modelNumber;
     private boolean fiveGAvailable;
     private String OSname;
@@ -8,11 +13,7 @@ public class Model extends SiemensMobile {
     private boolean InternetConnection;
 
     public void setFiveGAccess() {
-        if(fiveGAvailable = false) {
-            fiveGAvailable = true;
-        }
-        else
-            fiveGAvailable = false;
+        fiveGAvailable = !fiveGAvailable;
     }
 
     public void setModelNumber(Integer modelNumber) {
@@ -21,12 +22,7 @@ public class Model extends SiemensMobile {
 
     public void setInternetConnection()
     {
-        if(InternetConnection = false)
-        {
-            InternetConnection = true;
-        }
-        else
-            InternetConnection = false;
+       InternetConnection = !InternetConnection;
     }
     public void setOSname(String OSname) {
         this.OSname = OSname;
@@ -54,6 +50,15 @@ public class Model extends SiemensMobile {
     public boolean getFiveGAvailable()
     {
         return fiveGAvailable;
+    }
+
+    public String getModelInfo() {
+        return getPhoneInfo() +
+                "modelNumber=" + modelNumber +
+                ", fiveGAvailable=" + fiveGAvailable +
+                ", OSname='" + OSname + '\'' +
+                ", OSversion=" + OSversion +
+                ", InternetConnection=" + InternetConnection ;
     }
 
 }
