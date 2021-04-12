@@ -2,7 +2,6 @@ package lession_pack.books;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.WeakHashMap;
 
 public class bookGuide extends abstClassBook {
     bookGuide()
@@ -15,6 +14,25 @@ public class bookGuide extends abstClassBook {
     protected Integer ShchemesCount;
     protected List<guideScheme>Schemes = new ArrayList<>();
     protected List<guideTopic>topics = new ArrayList<>();
+
+
+    public String getGuide() {
+        return getBook() +
+                "guideMainTopic='" + guideMainTopic + '\'' +
+                ", TopicsCount=" + TopicsCount +
+                ", ShchemesCount=" + ShchemesCount +
+                ", Schemes=" + Schemes +
+                ", topics=" + topics +
+                '}';
+    }
+
+    public void setGuideMainTopic(String guideMainTopic) {
+        this.guideMainTopic = guideMainTopic;
+    }
+
+    public String getGuideMainTopic() {
+        return guideMainTopic;
+    }
 
     public void addScheme(String schName, Integer schPage, String abstImage, String description)
     {

@@ -46,8 +46,7 @@ public abstract class abstClassBook {
         return bookPublisher;
     }
 
-    @Override
-    public String toString() {
+    public String getBook() {
         return
                 "bookCode='" + bookCode + '\'' +
                 ", bookAuthor='" + bookAuthor + '\'' +
