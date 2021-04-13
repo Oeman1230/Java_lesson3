@@ -82,6 +82,10 @@ public class Main {
 
         neuroSurgeon doc2 = new neuroSurgeon();
         doc2.teachNewIllness("insult", "headache", 50, true);
-
+        doc2.doDoctorWork("Sasha", "headache");
+        doc2.setCanOperateHead();
+        doc2.doDoctorWork("Sasha", "headache");
+        doc2.setOperationTableStatus();
+        doc2.doDoctorWork("Sasha", "headache");
     }
 }

@@ -13,16 +13,41 @@ public class neuroSurgeon extends surgeon{
     private boolean canOperateHead;
     private Integer knownIllnessesCount;
     private boolean operationTableStatus;
-    private List<neuroIllness>KnownIllnesses = new ArrayList<>();
+    private List<neuroIllness>KnownNeuroIllnesses = new ArrayList<>();
+
+    @Override
+    public boolean doDoctorWork(String patientName, String syndromes) {
+       if(canOperateHead == false)
+       {
+           System.out.println("Doctor "+ doctorName +" is not ready. Come later");
+           return false;
+       }
+       if(operationTableStatus == false)
+       {
+           System.out.println("Operation table is not ready. Come later");
+       }
+        getPatient(patientName);
+       listenSyndromes(syndromes);
+       checkKnownIllnesses();
+       if(KnownNeuroIllnesses.get(currentSyndromeNumber).getOperationDifficulty() < 50)
+       {
+           System.out.println("Its too dangerous to do this operation");
+           return false;
+       }
+       return giveHealing(KnownIllnesses.get(currentSyndromeNumber).getIllnessName());
+
+    }
 
     public void teachNewIllness(String Illness, String syndromes, Integer operationDifficulty, boolean canHeal) {
-        neuroIllness temp = new neuroIllness();
-        temp.operationDifficulty = operationDifficulty;
+        Illnesses temp = new Illnesses();
         temp.setIllnessName(Illness);
         temp.setSyndromes(syndromes);
         temp.setCanHeal(canHeal);
         KnownIllnesses.add(temp);
         knownIllnessesCount++;
+        neuroIllness temp2 = new neuroIllness();
+        temp2.setOperationDifficulty(operationDifficulty);
+        KnownNeuroIllnesses.add(temp2);
     }
 
     public void setCanOperateHead() {
@@ -48,9 +73,13 @@ public class neuroSurgeon extends surgeon{
 
     }
 
-    class neuroIllness extends Illnesses
+    class neuroIllness
     {
         private Integer operationDifficulty;
+
+        public Integer getOperationDifficulty() {
+            return operationDifficulty;
+        }
 
         public void setOperationDifficulty(Integer operationDifficulty) {
             this.operationDifficulty = operationDifficulty;
