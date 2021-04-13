@@ -54,7 +54,6 @@ public class surgeon implements doctorActions{
         {
             if(KnownIllnesses.iterator().next().getSyndromes().equals(currentSyndrome))
             {
-                System.out.println("idea");
                 currentSyndromeNumber = i;
                 return KnownIllnesses.get(i).getIllnessName();
             }
@@ -81,10 +80,23 @@ public class surgeon implements doctorActions{
         listenSyndromes(syndromes);
         StringBuffer buf = new StringBuffer();
         buf.append(checkKnownIllnesses());
-        System.out.println(buf.substring(0));
+        System.out.println(" this illness is:" + buf.substring(0));
          return giveHealing(buf.substring(0));
 
     }
+
+    @Override
+    public String toString() {
+        return
+                "doctorName='" + doctorName + '\'' +
+                ", yearsInWork=" + yearsInWork +
+                ", currentPatientName='" + currentPatientName + '\'' +
+                ", currentSyndrome='" + currentSyndrome + '\'' +
+                ", currentSyndromeNumber=" + currentSyndromeNumber +
+                ", KnownIllnesses=" + KnownIllnesses.size();
+
+    }
+
     protected class Illnesses
     {
         private String IllnessName;

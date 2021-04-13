@@ -28,7 +28,7 @@ public class neuroSurgeon extends surgeon{
        }
         getPatient(patientName);
        listenSyndromes(syndromes);
-       checkKnownIllnesses();
+       System.out.println("this illness is:" + checkKnownIllnesses());
        if(KnownNeuroIllnesses.get(currentSyndromeNumber).getOperationDifficulty() < 50)
        {
            System.out.println("Its too dangerous to do this operation");
@@ -43,11 +43,22 @@ public class neuroSurgeon extends surgeon{
         temp.setIllnessName(Illness);
         temp.setSyndromes(syndromes);
         temp.setCanHeal(canHeal);
+        temp.setIllnessMedicine(Illness + "-operation");
         KnownIllnesses.add(temp);
         knownIllnessesCount++;
         neuroIllness temp2 = new neuroIllness();
         temp2.setOperationDifficulty(operationDifficulty);
         KnownNeuroIllnesses.add(temp2);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + System.lineSeparator() +
+                "canOperateHead=" + canOperateHead +
+                ", knownIllnessesCount=" + knownIllnessesCount +
+                ", operationTableStatus=" + operationTableStatus +
+                ", KnownNeuroIllnesses=" + KnownNeuroIllnesses.size();
+
     }
 
     public void setCanOperateHead() {

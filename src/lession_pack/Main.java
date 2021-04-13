@@ -79,13 +79,17 @@ public class Main {
         doc1.teachNewIllness("hit", "pain in leg");
 
         doc1.doDoctorWork(phone1.getPhoneOwner(), "pain in leg");
-
+        System.out.println(doc1.toString());
+        System.out.println(System.lineSeparator());
         neuroSurgeon doc2 = new neuroSurgeon();
+        doc2.setDoctorName("Stepan");
+        doc2.setYearsInWork(16);
         doc2.teachNewIllness("insult", "headache", 50, true);
         doc2.doDoctorWork("Sasha", "headache");
         doc2.setCanOperateHead();
         doc2.doDoctorWork("Sasha", "headache");
         doc2.setOperationTableStatus();
         doc2.doDoctorWork("Sasha", "headache");
+        System.out.println(doc2.toString());
     }
 }
