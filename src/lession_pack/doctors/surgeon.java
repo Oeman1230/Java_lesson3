@@ -45,7 +45,6 @@ public class surgeon implements doctorActions{
         temp.setIllnessMedicine(Illness + "medicine");
         KnownIllnesses.add(temp);
     }
-
     @Override
     public String checkKnownIllnesses() {
         System.out.println(doctorName + " thinking about:" + currentSyndrome);

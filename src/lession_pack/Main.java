@@ -91,5 +91,6 @@ public class Main {
         doc2.setOperationTableStatus();
         doc2.doDoctorWork("Sasha", "headache");
         System.out.println(doc2.toString());
+
     }
 }

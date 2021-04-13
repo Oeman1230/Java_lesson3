@@ -49,6 +49,7 @@ public class neuroSurgeon extends surgeon{
         neuroIllness temp2 = new neuroIllness();
         temp2.setOperationDifficulty(operationDifficulty);
         KnownNeuroIllnesses.add(temp2);
+
     }
 
     @Override
